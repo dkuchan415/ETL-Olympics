@@ -1,4 +1,4 @@
-# ELT Project Technical Report
+# ETL Project Technical Report
 
 For this ETL project our goal was to clean and combine data from three different data sources to create a database which will store the data in a single location for querying. This data would be useful in seeing if there are any regional trends in sports played or trends due to level of income.]
 
