@@ -1,16 +1,18 @@
 # ETL Project Technical Report
 
-For this ETL project our goal was to clean and combine data from three different data sources to create a database which will store the data in a single location for querying. This data would be useful in seeing if there are any regional trends in sports played or trends due to level of income.]
+The goal of this project was to clean and combine data from three different sources to create a new database with an intuitive structure for querying information. The three sources included CSV files from free sources like Kaggle, and detailed: 
 
-The goal was to bring in a few data sources that would be easily queried for this type of analysis.
+-Olympic athlete information, 
+-Olympic events and medal winners dating back to 1960, and 
+-Data detailing country population and demographics
+
+With this information, 
 
 Questions arose like:
     
 - Does a pattern emerge to show where most Olympic athletes come from? 
 - Is it mostly first world countries or no pattern emerges?
 - Does a country’s general income level affect their representation at Olympic events?
-
-The team members are Lenn Grayes, Daniel Kuchan and Alex Torres. 
     
 
 ## EXTRACT
@@ -45,6 +47,7 @@ Pandas is used again to load dataframes into a SQL database.
 We decided to a use a relational database because our data had a lot of overlapping information like Olympic Games, Sporting Events, Athlete Info, and Team Info. By using a relational database, we minimized the amount of duplicate information stored in order to save space.
 We first created a schema that can be find in the schema.sql file. Then, we used SQLAlchemy to connect to a local PostgreSQL database called olympics_db and uploaded our DataFrames to pre-made tables.
 
+![image](https://user-images.githubusercontent.com/68552052/111728630-4232b700-883b-11eb-84b2-4eaa22fd16c0.png)
 
 
 
