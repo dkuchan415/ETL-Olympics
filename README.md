@@ -2,9 +2,9 @@
 
 The goal of this project was to clean and combine data from three different sources to create a new database with an intuitive structure for querying information. The three sources included CSV files from free sources like Kaggle, and detailed: 
 
--Olympic athlete information, 
--Olympic events and medal winners dating back to 1960, and 
--Data detailing country population and demographics
+- Olympic athlete information, 
+- Olympic events and medal winners dating back to 1960, and 
+- Data detailing country population and demographics
 
 With this information, 
 
