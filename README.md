@@ -1,29 +1,24 @@
 # ETL Project Technical Report
 
-The goal of this project was to clean and combine data from three different sources to create a new database with an intuitive structure for querying information. The three sources included CSV files from free sources like Kaggle, and detailed: 
+The goal of this project was to Extract data from three different sources, Transform the data by cleaning and combining it, and finally Load it to a new database with an intuitive structure for querying the information. I wanted to explore historic data from the Olympic Games, with the aim of then using it to answer questions such as:
+
+- Does a pattern emerge to show where most Olympic athletes come from? 
+- Does a country's economic success correlate to succes in the Olympics?
+- Are there any other demographics that affect representation at Olympic events?
+
+## EXTRACT
+
+The data sources included CSV files from [Kaggle](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results) and [World bank](https://data.worldbank.org/indicator/SP.POP.TOTL) and detailed: 
 
 - Olympic athlete information, 
 - Olympic events and medal winners dating back to 1960, and 
 - Data detailing country population and demographics
 
-With this information, 
+For all three CSVs, Pandas is used to read the CSV into a dataframe where it can be manipulated to fit the new structure.
 
-Questions arose like:
-    
-- Does a pattern emerge to show where most Olympic athletes come from? 
-- Is it mostly first world countries or no pattern emerges?
-- Does a country’s general income level affect their representation at Olympic events?
-    
+The ERD of this new structure is shown below.
 
-## EXTRACT
-
-Our data sources were Olympic historical data from [Kaggle](https://www.kaggle.com/heesoo37/120-years-of-olympic-history-athletes-and-results)
-
-and population data from 1960-2019 and income and region classifications from [World bank](https://data.worldbank.org/indicator/SP.POP.TOTL).
-
-For all 3 CSVs, Pandas is used to read the CSV into the DataFrame.
-
-Also attached is an image of the ERD in the Resources folder.
+![image](https://user-images.githubusercontent.com/68552052/111728630-4232b700-883b-11eb-84b2-4eaa22fd16c0.png)
 
 ## TRANSFORM
 
@@ -47,7 +42,6 @@ Pandas is used again to load dataframes into a SQL database.
 We decided to a use a relational database because our data had a lot of overlapping information like Olympic Games, Sporting Events, Athlete Info, and Team Info. By using a relational database, we minimized the amount of duplicate information stored in order to save space.
 We first created a schema that can be find in the schema.sql file. Then, we used SQLAlchemy to connect to a local PostgreSQL database called olympics_db and uploaded our DataFrames to pre-made tables.
 
-![image](https://user-images.githubusercontent.com/68552052/111728630-4232b700-883b-11eb-84b2-4eaa22fd16c0.png)
 
 
 
